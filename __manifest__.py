@@ -23,10 +23,10 @@
 ##############################################################################
 
 {
-    'name': 'MRP Enhancements - Inventory',
+    'name': 'MRP Enhancements',
     'version': '10.0.0.0.0',
     'category': 'Customizations',
-    'description': ''' This module will add field in stock.location \n
+    'description': ''' This module adds a few enhancements in the Manufacture and Inventory Workflow \n
 ''',
     'author': 'ThinkOpen Solutions Brasil',
     'website': 'http://www.tkobr.com',
