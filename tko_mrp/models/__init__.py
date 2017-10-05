@@ -21,4 +21,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import tko_stock_location
+import stock_location

@@ -34,7 +34,7 @@
         'mrp'
     ],
     'data': [
-        'views/mrp_enhancement_view.xml',
+        'views/stock_location_view.xml',
     ],
     'qweb': [''],
     'init': [],
