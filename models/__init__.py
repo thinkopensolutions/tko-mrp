@@ -21,4 +21,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import mrp_custom
+import tko_stock_location
