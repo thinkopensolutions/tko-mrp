@@ -28,13 +28,13 @@
     'category': 'Customizations',
     'description': ''' This module adds a few enhancements in the Manufacture and Inventory Workflow \n
 ''',
-    'author': 'ThinkOpen Solutions Brasil',
-    'website': 'http://www.tkobr.com',
+    'author': 'TKOBR',
+    'website': 'http://www.tko.tko-br.com',
     'depends': [
         'mrp'
     ],
     'data': [
-        'views/mrp_custom_view.xml',
+        'views/mrp_enhancement_view.xml',
     ],
     'qweb': [''],
     'init': [],
