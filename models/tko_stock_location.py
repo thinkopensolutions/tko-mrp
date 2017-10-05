@@ -24,7 +24,7 @@
 from odoo import api, fields, models, _
 
 
-class Orderpoint(models.Model):
+class Location(models.Model):
     _inherit = "stock.location"
     _description = "Inventory Locations"
 
