@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_warehouse_orderpoint_form" model="ir.ui.view">
+    <record id="view_stock_location_form_new" model="ir.ui.view">
         <field name="name">stock.location</field>
         <field name="model">stock.location</field>
         <field name="inherit_id" ref="stock.view_location_form"/>
