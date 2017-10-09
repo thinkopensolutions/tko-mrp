@@ -35,6 +35,7 @@
     ],
     'data': [
         'views/stock_location_view.xml',
+        'views/product_view.xml',
     ],
     'qweb': [''],
     'init': [],
