@@ -37,7 +37,20 @@ class product_template(models.Model):
     _inherit = 'product.template'
 
     attachments = fields.Binary(string="Attach Files")
+    attachments_ids = fields.One2many('product.attachment', 'product_id')
 
+    @api.multi
+    def open_attachment(self):
+        view_id = self.env.ref('tko_mrp.view_attachment')
+        return{
+               'view_type':'form',
+               'view_mode':'form',
+               'res_model':'select.attachment',
+               'view_id':view_id.id,
+               'type':'ir.actions.act_window',
+               'name':'Attachment',
+               'target':'new',
+               }
 
 class stock_change_product_qty(models.TransientModel):
     _inherit = 'stock.change.product.qty'
@@ -75,3 +88,26 @@ class stock_change_product_qty(models.TransientModel):
             })
             inventory.action_done()
         return {'type': 'ir.actions.act_window_close'}
+
+
+
+class select_attachment(models.TransientModel):
+    _name = 'select.attachment'
+
+    file_name = fields.Char(string="")
+    file_data = fields.Binary(string="Name")
+
+    @api.one
+    def create_attachment(self):
+        self.env['product.attachment'].create({'file_data':self.file_data,
+                                               'product_id':self._context.get('active_id'),
+                                               'file_name':self.file_name
+                                               })
+
+
+class product_attachment(models.Model):
+    _name = 'product.attachment'
+
+    product_id = fields.Many2one('product.template', string="Product")
+    file_name = fields.Char(string="File Name")
+    file_data = fields.Binary(string="File Name")
