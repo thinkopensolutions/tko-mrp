@@ -19,9 +19,36 @@
         <field name="arch" type="xml">
             <page name="notes" position="after">
                 <page string="Attachments">
-                    <field name="attachments" widget="image" hieght="150px" width="150px"/>
+                    <field name="attachments_ids">
+                        <tree create="false" edit="false" editable="top">
+                            <field name="file_name" invisible="1"/>
+                            <field name="file_data" filename="file_name"/>
+                            <field name="product_id" invisible="1"/>
+                        </tree>
+                    </field>
                 </page>
             </page>
+            <xpath expr="//form/header" position="inside">
+                <button name="open_attachment" string="Attachment" type="object"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_attachment" model="ir.ui.view">
+        <field name="name">select.attachment.form</field>
+        <field name="model">select.attachment</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="file_data" filename="file_name" />
+                    <field name="file_name" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="create_attachment" string="Save" type="object" class="oe_highlight" />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
         </field>
     </record>
 
