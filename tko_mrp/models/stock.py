@@ -22,7 +22,9 @@
 #
 ##############################################################################
 from odoo import api, fields, models, tools, _
+from odoo.exceptions import ValidationError
 from datetime import datetime, date
+
 
 
 class Location(models.Model):
@@ -38,6 +40,12 @@ class product_template(models.Model):
 
     attachments = fields.Binary(string="Attach Files")
     attachments_ids = fields.One2many('product.attachment', 'product_id')
+
+    @api.constrains('default_code')
+    def constrain_default_code(self):
+        if self.default_code:
+            if len(self.search([('default_code', '=', self.default_code)])) > 1:
+                raise Warning(_('The internal reference must be unique!'))
 
     @api.multi
     def open_attachment(self):
