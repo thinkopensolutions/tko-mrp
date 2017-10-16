@@ -34,7 +34,9 @@
         'mrp'
     ],
     'data': [
-        'views/stock_location_view.xml',
+        'security/ir.model.access.csv',
+        'views/stock_view.xml',
+        'views/product_view.xml',
     ],
     'qweb': [''],
     'init': [],

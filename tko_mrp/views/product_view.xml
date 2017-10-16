@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherit_view_change_product_quantity" model="ir.ui.view">
+        <field name="name">stock.change.product.qty.form</field>
+        <field name="model">stock.change.product.qty</field>
+        <field name="inherit_id" ref="stock.view_change_product_quantity"/>
+        <field name="arch" type="xml">
+            <field name="lot_id" position="after">
+                <field name="notes"/>
+            </field>
+        </field>
+    </record>
+
+     <record id="inherit_product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <page name="notes" position="after">
+                <page string="Attachments">
+                    <field name="attachments_ids">
+                        <tree create="false" edit="false" editable="top">
+                            <field name="file_name" invisible="1"/>
+                            <field name="file_data" filename="file_name"/>
+                            <field name="product_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+            <xpath expr="//form/header" position="inside">
+                <button name="open_attachment" string="Attachment" type="object"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_attachment" model="ir.ui.view">
+        <field name="name">select.attachment.form</field>
+        <field name="model">select.attachment</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="file_data" filename="file_name" />
+                    <field name="file_name" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="create_attachment" string="Save" type="object" class="oe_highlight" />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
