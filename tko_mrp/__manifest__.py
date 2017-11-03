@@ -24,14 +24,15 @@
 
 {
     'name': 'MRP Enhancements',
-    'version': '10.0.0.0.0',
+    'version': '10.1.0.0.0',
     'category': 'Customizations',
     'description': ''' This module adds a few enhancements in the Manufacture and Inventory Workflow \n
 ''',
     'author': 'TKOBR',
     'website': 'http://www.tko.tko-br.com',
     'depends': [
-        'mrp'
+        'mrp',
+        'decimal_precision',
     ],
     'data': [
         'security/ir.model.access.csv',
