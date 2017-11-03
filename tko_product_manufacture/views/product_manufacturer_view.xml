@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="product_template_manufacturer_kanban_view">
+            <field name="name">product.template.manufacturer.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_kanban_view"/>
+            <field name="arch" type="xml">
+                <field name="product_variant_ids" position="after">
+                    <field name="manufacturer"/>
+                    <field name="manufacturer_pref"/>
+                </field>
+
+                <div name="tags" position="before">
+
+                    <a name="%(base.action_partner_customer_form)d" type="action">
+                        <t t-if="record.manufacturer.raw_value">
+                            <br/>
+                            <field name="manufacturer"/>
+                        </t>
+                    </a>
+                    <br/>
+                    <field name="manufacturer_pref"/>
+                </div>
+
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="product_template_manufacturer_form_view">
+            <field name="name">product.template.manufacturer.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <group name="group_general" position="inside">
+                    <group string="Manufacturer">
+                        <field name="manufacturer" domain="[('is_fabricante','=', True)]"
+                               context="{'default_supplier':True, 'default_is_fabricante':True, 'default_customer':False}"/>
+                        <field name="manufacturer_pname"/>
+                        <field name="manufacturer_pref"/>
+                        <field name="manufacturer_purl" widget="url"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
