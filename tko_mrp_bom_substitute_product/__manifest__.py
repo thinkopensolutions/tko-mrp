@@ -39,8 +39,8 @@
     ],
     'data': [
         # 'security/ir.model.access.csv',
-        'mrp_view.xml',
-        'mrp_workflow.xml',
+        'views/mrp_view.xml',
+        'views/mrp_workflow.xml',
     ],
     'demo_xml': [],
     'installable': True,
