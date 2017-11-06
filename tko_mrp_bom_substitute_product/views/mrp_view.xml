@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="mrp_bom_form_inherit" model="ir.ui.view">
+        <!-- <record id="mrp_bom_form_inherit" model="ir.ui.view">
             <field name="name">MRP</field>
             <field name="model">mrp.bom</field>
             <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
@@ -14,17 +14,17 @@
                     <field name="product_uom_id" groups="product.group_uom"/>
                     <field name="default_code"/>
                 </xpath>
-                <!-- <xpath expr="//field[@name='bom_line_ids']/tree//field[@name='attribute_value_ids']" position="before">
+                <xpath expr="//field[@name='bom_line_ids']/tree//field[@name='attribute_value_ids']" position="before">
                     <field name="fabricante" domain="[('is_fabricante','=', True)]"
                            context="{'default_supplier':True, 'default_is_fabricante':True, 'default_customer':False}"/>
                     <field name="ref_fabricante"/>
-                </xpath> -->
+                </xpath>
                 <xpath expr="//field[@name='bom_line_ids']/tree//field[@name='product_id']" position="after">
                     <field name="substitute_product_id"/>
                 </xpath>
             </field>
         </record>
- 
+ -->
         <record id="mrp_production_form_inherit" model="ir.ui.view">
             <field name="name">MRP Production</field>
             <field name="model">mrp.production</field>
