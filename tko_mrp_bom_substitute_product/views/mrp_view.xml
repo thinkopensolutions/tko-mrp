@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!-- <record id="mrp_bom_form_inherit" model="ir.ui.view">
+        <record id="mrp_bom_form_inherit" model="ir.ui.view">
             <field name="name">MRP</field>
             <field name="model">mrp.bom</field>
             <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
@@ -24,24 +24,12 @@
                 </xpath>
             </field>
         </record>
- -->
+ 
         <record id="mrp_production_form_inherit" model="ir.ui.view">
             <field name="name">MRP Production</field>
             <field name="model">mrp.production</field>
             <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
             <field name="arch" type="xml">
-                <button name="button_mark_done" position="replace">
-                    <!-- <button name="action_compute_substitute"
-                            type="object" string="Verificar Substitutos" class="trace oe_highlight"/>
-                    <button name="button_confirm"
-                            string="Confirm Production" class="trace oe_highlight"/> -->
-                    <!-- <button name="action_compute_substitute"
-                            type="object" string="Verificar Substitutos" class="trace oe_highlight"/> -->
-                    <!-- <button name="button_confirm"
-                            attrs="{'invisible' :['|',('computed_substitute','=',False),('state','!=','draft')] }"
-                            string="Confirm Production" class="trace oe_highlight"/> -->
-                </button>
-
                 <button name="%(mrp.action_mrp_production_moves)d" position="replace">
                     <button name="action_substitute_produce" type="object" states="in_production" class="trace oe_highlight" string="Concluir"/>
                 </button>
@@ -50,9 +38,9 @@
                         <!-- <button name="check_availability_substitute" type="object" string="Check Availability"
                             class="trace oe_highlight"
                             />
-                        <button name="check_availability_substitute" type="object" string="Check Availability"/>
+                        <button name="check_availability_substitute" type="object" string="Check Availability"/>-->
                         <button name="select_all_substitute" type="object" string="Select All" states="draft"/>
-                        <button name="clear_all_substitute" type="object" string="Clear All." states="draft"/> -->
+                        <button name="clear_all_substitute" type="object" string="Clear All" states="draft"/>
                         <!-- <field name="computed_substitute"/> -->
                         <div>
                             <field name="substitute_lines" nolable="1">
@@ -69,14 +57,6 @@
                         </div>
                     </div>
                 </field>
-                <!-- <field name="move_raw_ids" position="replace">
-                    <field name="visible_raw_ids">
-                        <tree>
-                            <field name="product_id"/>
-                            <field name="qty_available"/>
-                        </tree>
-                    </field>
-                </field> -->
             </field>
         </record>
     </data>
