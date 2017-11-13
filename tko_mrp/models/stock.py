@@ -22,8 +22,10 @@
 #
 ##############################################################################
 from odoo import api, fields, models, tools, _
+from odoo.exceptions import ValidationError
 from datetime import datetime, date
 from odoo.addons import decimal_precision as dp
+
 
 
 class Location(models.Model):
@@ -41,6 +43,12 @@ class product_template(models.Model):
     attachments_ids = fields.One2many('product.attachment', 'product_id')
     volume = fields.Float('Volume', digits=dp.get_precision('Stock Volume'), help="The volume in m3.")
 
+
+    @api.constrains('default_code')
+    def constrain_default_code(self):
+        if self.default_code:
+            if len(self.search([('default_code', '=', self.default_code)])) > 1:
+                raise Warning(_('The internal reference must be unique!'))
 
     @api.multi
     def open_attachment(self):
