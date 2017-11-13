@@ -35,7 +35,7 @@
     'depends': [
         'base',
         'mrp',
-        'tko_product_manufacture',
+        'tko_product_manufacturer',
     ],
     'data': [
         # 'security/ir.model.access.csv',
