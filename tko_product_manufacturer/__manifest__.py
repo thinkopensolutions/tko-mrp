@@ -1,11 +1,11 @@
-        # -*- encoding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 #
-#    ThinkOpen Solutions Brasil
-#    Copyright (C) Thinkopen Solutions <http://www.tkobr.com>.
+#    Thinkopen Brasil
+#    Copyright (C) Thinkopen Solutions Brasil (<http://www.tkobr.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,29 +23,30 @@
 ##############################################################################
 
 {
-    'name': 'MRP Enhancements',
-    'version': '10.1.0.0.0',
-    'category': 'Customizations',
-    'description': ''' This module adds a few enhancements in the Manufacture and Inventory Workflow \n
+    'name': 'TKO Product Manufacturer',
+    'version': '0.003',
+    'category': 'Product',
+    'sequence': 38,
+    'complexity': 'simple',
+    'description': '''This module adds manufacturer field in product form and kanban
 ''',
-    'author': 'TKOBR',
-    'website': 'http://www.tko.tko-br.com',
-    'depends': [
-        'mrp',
-        'decimal_precision',
-    ],
+    'author': 'ThinkOpen Solutions Brasil',
+    'website': 'http://www.tkobr.com',
+    'images': ['images/oerp61.jpeg',
+               ],
+    'depends': ['base',
+                'product',
+                ],
     'data': [
-        'security/ir.model.access.csv',
-        'views/stock_view.xml',
-        'views/product_view.xml',
+        'views/product_manufacturer_view.xml',
+        'views/res_partner_view.xml',
     ],
-    'qweb': [''],
     'init': [],
     'demo': [],
     'update': [],
-    'test': [],  
+    'test': [],  # YAML files with tests
     'installable': True,
     'application': False,
-    'auto_install': False,
+    'auto_install': False,  # If it's True, the modules will be auto-installed when all dependencies are installed
     'certificate': '',
 }

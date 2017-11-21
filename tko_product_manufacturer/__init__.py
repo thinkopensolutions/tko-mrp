@@ -1,11 +1,10 @@
-        # -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
-#
-#    ThinkOpen Solutions Brasil
-#    Copyright (C) Thinkopen Solutions <http://www.tkobr.com>.
+#    Copyright (C) 2012 Thinkopen Solutions, Lda. All Rights Reserved
+#    http://www.thinkopensolutions.com.
+#    $Id$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,31 +20,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    'name': 'MRP Enhancements',
-    'version': '10.1.0.0.0',
-    'category': 'Customizations',
-    'description': ''' This module adds a few enhancements in the Manufacture and Inventory Workflow \n
-''',
-    'author': 'TKOBR',
-    'website': 'http://www.tko.tko-br.com',
-    'depends': [
-        'mrp',
-        'decimal_precision',
-    ],
-    'data': [
-        'security/ir.model.access.csv',
-        'views/stock_view.xml',
-        'views/product_view.xml',
-    ],
-    'qweb': [''],
-    'init': [],
-    'demo': [],
-    'update': [],
-    'test': [],  
-    'installable': True,
-    'application': False,
-    'auto_install': False,
-    'certificate': '',
-}
+import product_manufacturer
+import res_partner

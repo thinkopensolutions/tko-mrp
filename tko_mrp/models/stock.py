@@ -23,6 +23,7 @@
 ##############################################################################
 from odoo import api, fields, models, tools, _
 from datetime import datetime, date
+from odoo.addons import decimal_precision as dp
 
 
 class Location(models.Model):
@@ -38,6 +39,8 @@ class product_template(models.Model):
 
     attachments = fields.Binary(string="Attach Files")
     attachments_ids = fields.One2many('product.attachment', 'product_id')
+    volume = fields.Float('Volume', digits=dp.get_precision('Stock Volume'), help="The volume in m3.")
+
 
     @api.multi
     def open_attachment(self):
